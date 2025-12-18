@@ -1,6 +1,7 @@
 <script setup>
+import FrontWheel from './components/FrontWheel.vue';
 </script>
 
 <template>
-    <h1>Hello Vue!!</h1>
+    <FrontWheel />
 </template>
