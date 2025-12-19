@@ -1,8 +1,18 @@
-<script setup></script>
+<script setup>
+import Tire from './Tire.vue';
+import { useCounterStore } from '@/stores/counter'; // 옵션스토어 활용
+
+const counterStore = useCounterStore() // 옵션스토어 활용
+</script>
 
 <template>
   <div class="rear-wheel">
     <span>REAR WHEEL</span>
+    <Tire />
+    <!-- 옵션스토어 활용 : 스토어 횟수(count) 상태 데이터 출력 -->
+    <div>TIMES: {{ counterStore.count }}</div>
+    <!-- 옵션스토어 활용 : 회전 버튼 클릭 시 스토어 increment 액션 호출 -->
+    <button @click="counterStore.increment()">회전</button>
   </div>
 </template>
 
